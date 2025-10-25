@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 bool isPyth(unsigned a, unsigned b, unsigned c);
 
@@ -19,15 +19,21 @@ int main()
     }
     else if (std::cin.fail())
     {
-        std::cerr << "Error\n";
-        return 1;
+        if (a == std::numeric_limits<unsigned>::max()) {
+            std::cerr << "Error: input overflow\n";
+            return 2;
+        }
+        else {
+            std::cerr << "Error: input not correct\n";
+            return 1;
+        }
     }
 }
 
 bool isPyth(unsigned a, unsigned b, unsigned c)
 {
-    bool p = pow(a, 2) == (pow(b, 2) + pow(c, 2));
-    p = p || pow(b, 2) == (pow(a, 2) + pow(c, 2));
-    p = p || pow(c, 2) == (pow(a, 2) + pow(b, 2));
+    bool p = a * a == (b * b + c * c);
+    p = p || (b * b == (a * a + c * c));
+    p = p || (c * c == (a * a + b * b));
     return p;
 }
