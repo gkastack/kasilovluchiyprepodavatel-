@@ -1,3 +1,0 @@
-﻿  pr5.cpp
-C:\Users\grcomerce\Desktop\pr5\pr5\pr5.cpp(10,21): warning C4244: +=: преобразование "double" в "size_t", возможна потеря данных
-  pr5.vcxproj -> C:\Users\grcomerce\Desktop\pr5\x64\Debug\pr5.exe
